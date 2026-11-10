@@ -6,7 +6,7 @@ description: "Use when a college student from freshman year to recent graduate n
 description_zh: "从大一到大四的求职全链路决策工具：阶段规划、基础岗位通用技能、方向与非对口就业、简历、城市排名、投递、模拟面试、落脚租房、劳动合同与试用期、个人现金流。"
 description_en: "End-to-end career launch guide for college students and recent graduates: stage planning, baseline job skills, direction and non-major job paths, resumes, city ranking, applications, mock interviews, housing, contracts, probation, and cash flow."
 category: career
-version: "3.1.0"
+version: "3.1.1"
 disable-model-invocation: false
 user-invocable: true
 tags: ["求职", "大学生", "大一", "大二", "大三", "大四", "非对口就业", "专业就业面窄", "基础岗位技能", "简历", "模拟面试", "择城", "租房", "劳动合同", "试用期", "理财", "大专", "专升本"]
@@ -81,8 +81,8 @@ agent_created: true
 | 判定结果 | 入口模块 | 第一个动作 |
 |---|---|---|
 | 大一 / 大二 | M1 阶段地图 | 给本阶段唯一动作 + 一项轻接触技能 |
-| 大三 / 大四 + 无简历 | 盘资产 → 先定方向 → 建简历 | 资产要定级深挖，简历要对着 JD 写 |
-| 大三 / 大四 + 有简历 | 盘资产 → 诊断简历 | 先定级深挖，再按 JD 诊断 |
+| 大三 / 大四 + 无简历 | 盘资产 → 先定方向 → 建简历 | 技能直接采信，经历要深挖，简历对着 JD 写 |
+| 大三 / 大四 + 有简历 | 盘资产 → 诊断简历 | 先深挖经历，再按 JD 诊断 |
 | **有岗位 + 有城市** | M6 | 定向投递（先确认简历已针对该岗位改过） |
 | **有岗位 + 无城市** | **M5 城市** | 用岗位反查城市，**此时不得给投递动作** |
 | **无岗位 + 有城市** | **M3 方向** | 先定岗位，再回头验该城是否撑得住这个岗位 |
@@ -131,7 +131,7 @@ agent_created: true
 | **M1 阶段地图** | M0 的年级 | M2、M3 |
 | **M2 通用能力** | M1 的年级 + M3 的目标岗位 | M4 的技能栏 |
 | **M3 方向与岗位** | M0 的技能/经历 | M2、M4、M5 |
-| **M4 简历** | M0 的经历（**已定级、已深挖**）+ M3 的岗位 + 3–5 条真实 JD | M6、M7 |
+| **M4 简历** | M0 的经历（**已深挖**）+ M3 的岗位 + 3–5 条真实 JD | M6、M7 |
 | **M5 城市** | M3 的岗位 + M0 的约束 | M6、M8 |
 | **M6 投递** | M4 的简历 + M5 的城市 | M7、M8 |
 | **M7 面试** | M4 + M6（有面试才模拟） | M9 |
