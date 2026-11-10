@@ -6,7 +6,7 @@ description: "Use when a college student from freshman year to recent graduate n
 description_zh: "从大一到大四的求职全链路决策工具：阶段规划、基础岗位通用技能、方向与非对口就业、简历、城市排名、投递、模拟面试、落脚租房、劳动合同与试用期、个人现金流。"
 description_en: "End-to-end career launch guide for college students and recent graduates: stage planning, baseline job skills, direction and non-major job paths, resumes, city ranking, applications, mock interviews, housing, contracts, probation, and cash flow."
 category: career
-version: "3.6.0"
+version: "3.7.0"
 disable-model-invocation: false
 user-invocable: true
 tags: ["求职", "大学生", "大一", "大二", "大三", "大四", "非对口就业", "专业就业面窄", "基础岗位技能", "简历", "模拟面试", "择城", "租房", "劳动合同", "试用期", "理财", "大专", "专升本"]
